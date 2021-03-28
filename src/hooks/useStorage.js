@@ -1,15 +1,15 @@
 import React from 'react'
-import { FirebaseClient } from '../firebase'
+import { storage, firestore, timestamp } from '../firebase'
 
 const useStorage = (file) => {
-    const [progress, setProgress] = useState(0);
-    const [error, setError] = useState(null);
-    const [url, setUrl] = useState(null);
+    const [progress, setProgress] = React.useState(0);
+    const [error, setError] = React.useState(null);
+    const [url, setUrl] = React.useState(null);
   
-    useEffect(() => {
+    React.useEffect(() => {
       // references
-      const storageRef = FirebaseClient.projectStorage.ref(file.name);
-      const collectionRef = FirebaseClient.projectFirestore.collection("images");
+      const storageRef = storage.ref(file.name);
+      const collectionRef = firestore.collection("images");
   
       storageRef.put(file)
         .on("state_changed",
