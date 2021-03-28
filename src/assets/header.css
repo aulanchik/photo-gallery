@@ -1,0 +1,10 @@
+.header {
+    text-align: center;
+}
+
+.header__title {
+    font-size: 2rem;
+    color: peachpuff;
+    font-family: 'Noto Serif';
+    text-shadow: 3px 3px lightgrey;
+}
